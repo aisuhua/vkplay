@@ -2,4 +2,6 @@
 /config/development/
 /.idea/
 /vendor/
+/app/cache
+/app/config/development/config.local.php
 composer.lock

@@ -1,0 +1,22 @@
+{
+    "name": "vkplay",
+    "version": "0.0.1",
+    "description": "VK Media Player",
+    "main": "gulpfile.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tankist/vkplay.git"
+    },
+    "keywords": [
+        "vk"
+    ],
+    "author": "Victor Gryshko",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tankist/vkplay/issues"
+    },
+    "dependencies": {
+        "bower": "latest",
+        "gulp": "latest"
+    }
+}

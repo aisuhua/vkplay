@@ -4,4 +4,5 @@
 /vendor/
 /app/cache
 /app/config/development/config.local.php
+/public/bower_components
 composer.lock

@@ -3,7 +3,7 @@
 /.idea/
 /vendor/
 /app/cache
-/app/config/development/config.local.php
 /node_modules
 /public/bower_components
-composer.lock
+config.local.php
+/composer.lock

@@ -93,5 +93,9 @@ return [
                 ],
             ],
         ],
+        'vk' => [
+            'id' => '4742595',
+            'secret' => 'lqy8C6Yw5EWsGJX24gTO',
+        ],
     ],
 ];

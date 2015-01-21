@@ -1,24 +1,25 @@
 {
-    "name": "VkPlay",
-    "version": "0.0.1",
-    "homepage": "https://github.com/tankist/vkplay",
-    "authors": [
-        "tankist <stalin1945@gmail.com>"
-    ],
-    "description": "VK Media player",
-    "keywords": [
-        "vk"
-    ],
-    "license": "MIT",
-    "private": true,
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "bootstrap": "~3.3.2"
-    }
+  "name": "VkPlay",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tankist/vkplay",
+  "authors": [
+    "tankist <stalin1945@gmail.com>"
+  ],
+  "description": "VK Media player",
+  "keywords": [
+    "vk"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3",
+    "soundmanager2": "*"
+  }
 }

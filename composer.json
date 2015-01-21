@@ -1,0 +1,15 @@
+{
+    "name": "tankist/vkplay",
+    "description": "VK media player",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Victor Gryshko",
+            "email": "stalin1945@gmail.com"
+        }
+    ],
+    "require": {
+        "ftugit/oauth-vkontakte": "dev-master"
+    }
+}

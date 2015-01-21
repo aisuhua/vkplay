@@ -6,7 +6,6 @@
         "tankist <stalin1945@gmail.com>"
     ],
     "description": "VK Media player",
-    "main": "index.php",
     "keywords": [
         "vk"
     ],

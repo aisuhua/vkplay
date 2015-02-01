@@ -200,4 +200,15 @@ $di->setShared('cookies', function () {
     return $cookies;
 });
 
+$di['vk'] = function () use ($config) {
+    $schema = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . '://';
+    return new \OAuth\Services\Vkontakte(
+        $schema . $_SERVER['HTTP_HOST'] . ($config->vk->callback ?: ''),
+        [
+            'client_id' => $config->vk->id,
+            'client_secret' => $config->vk->secret,
+        ]
+    );
+};
+
 return $di;

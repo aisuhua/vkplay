@@ -1,3 +1,3 @@
-<h1>Congratulations!</h1>
-
-<p>You're now flying with Phalcon. Great things are about to happen!</p>
+{% if isAuth == false %}
+<a href="/auth" class="auth-btn btn btn-info btn-lg">Auth</a>
+{% endif %}

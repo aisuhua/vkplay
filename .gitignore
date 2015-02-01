@@ -7,3 +7,5 @@
 /public/bower_components
 config.local.php
 /composer.lock
+/public/css/dist
+/public/js/dist

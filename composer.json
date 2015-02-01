@@ -10,6 +10,6 @@
         }
     ],
     "require": {
-        "ftugit/oauth-vkontakte": "dev-master"
+        "hannesvdvreken/php-oauth": "dev-master"
     }
 }

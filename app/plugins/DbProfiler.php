@@ -43,7 +43,7 @@ class DbProfiler extends Plugin
         $this->_profiler = $_profiler;
         $this->_priority = $priority;
         
-        $this->logger->begin();
+        $this->_logger->begin();
     }
 
     /**
@@ -110,7 +110,7 @@ class DbProfiler extends Plugin
                 $this->_priority
             );
             
-            $this->logger->commit();
+            $this->_logger->commit();
         }
     }
 

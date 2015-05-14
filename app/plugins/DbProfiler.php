@@ -42,6 +42,8 @@ class DbProfiler extends Plugin
         $this->_logger = $_logger;
         $this->_profiler = $_profiler;
         $this->_priority = $priority;
+        
+        $this->logger->begin();
     }
 
     /**
@@ -50,7 +52,11 @@ class DbProfiler extends Plugin
      */
     public function beforeQuery(Event $event, DbAdapterInterface $connection)
     {
-        $this->_profiler->startProfile($connection->getSQLStatement());
+            $this->_profiler->startProfile(
+                $connection->getSQLStatement(),
+                $connection->getSQLVariables(),
+                $connection->getSQLBindTypes()
+            );
     }
 
     /**
@@ -68,9 +74,9 @@ class DbProfiler extends Plugin
                 $key = ':' . $key;
             }
             $sqlVariables[$key] = !is_array($value)
-                ? $connection->escapeString($value)
+                ? $connection->escapeString((string) $value) // important
                 : array_map(function ($v) use ($connection) {
-                    return $connection->escapeString($v);
+                    return $connection->escapeString((string) $v); // important
                 }, $value);
         }
 
@@ -97,12 +103,14 @@ class DbProfiler extends Plugin
         if ($this->_logger && $this->_profiler) {
             $this->_logger->log(
                 sprintf(
-                    'Total SQL execution time (%d queries): %.4f sec.]',
+                    'Total SQL execution time (%d queries): %.4f sec.',
                     $this->_profiler->getNumberTotalStatements(),
                     round($this->_profiler->getTotalElapsedSeconds(), 4)
                 ),
                 $this->_priority
             );
+            
+            $this->logger->commit();
         }
     }
 

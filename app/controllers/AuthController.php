@@ -9,7 +9,9 @@ class AuthController extends ControllerBase
 
     public function indexAction()
     {
-        $url = $this->vk->authorizationUrl();
+        $url = $this->vk->authorizationUrl([
+            'scope' => 'video,audio',
+        ]);
         $this->response->redirect($url, true, 302);
         $this->view->setRenderLevel(View::LEVEL_NO_RENDER);
     }
@@ -20,7 +22,7 @@ class AuthController extends ControllerBase
             $token = $this->vk->accessToken($this->request->get('code'));
             $this->session->set('oauth_token', $token);
         }
-        $this->response->redirect('/', false, 302);
+        $this->response->redirect('//' . $this->request->getServerName() . '/', false, 302);
         $this->view->setRenderLevel(View::LEVEL_NO_RENDER);
     }
 

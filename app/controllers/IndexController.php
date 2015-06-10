@@ -18,5 +18,16 @@ class IndexController extends ControllerBase
         $this->view->setVar('isAuth', $isAuth);
     }
 
+    public function listAction()
+    {
+        if ($this->session->has('oauth_token')) {
+            $token = $this->session->get('oauth_token');
+            if ($token) {
+                $this->vk->setToken($token);
+                $list = $this->vk->get('audio.get')->json();
+            }
+        }
+    }
+
 }
 
